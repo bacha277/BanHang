@@ -221,32 +221,22 @@ ob_start();
   <div class="content-wrapper">
             
       <?php
-      
-       //1. connect
-            include '../connect.php';
-      
-      if(isset($_REQUEST['page']))
-      {
+      include '../connect.php';
+
+      if (isset($_REQUEST['page'])) {
           $page = $_REQUEST['page'];
-          switch($page)
-          {
+          switch ($page) {
               case 'ds_dm':
-                  include 'danh_muc/ds_dm.php';
+                  include 'DanhMuc/DanhSachDanhMuc.php';
                   break;
               case 'them_dm':
-                  include 'danh_muc/them_dm.php';
-                  break;
-              case 'ds_sp':
-                  include 'san_pham/ds_sp.php';
-                  break;
-              case 'them_sp':
-                  include 'san_pham/them_sp.php';
-                  break;
-              case 'sua_dm':
-                  include 'danh_muc/sua_dm.php';
+                  include 'DanhMuc/ThemDanhMuc.php';
                   break;
               case 'xoa_dm':
-                  include 'danh_muc/xoa_dm.php';
+                  include 'DanhMuc/XoaDanhMuc.php';
+                  break;
+              case 'sua_dm':
+                  include 'DanhMuc/SuaDanhMuc.php';
                   break;
           }
       }
