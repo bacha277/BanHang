@@ -197,7 +197,7 @@ ob_start();
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Danh sách liên hệ</a></li>
+            <li><a href="index.php?page=ds_lh"><i class="fa fa-circle-o"></i> Danh sách liên hệ</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -208,8 +208,8 @@ ob_start();
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Danh sách tin tức</a></li>
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Thêm mới tin tức</a></li>
+            <li><a href="index.php?page=ds_tt"><i class="fa fa-circle-o"></i> Danh sách tin tức</a></li>
+            <li><a href="index.php?page=them_tt"><i class="fa fa-circle-o"></i> Thêm mới tin tức</a></li>
           </ul>
         </li>
       </ul>
@@ -249,6 +249,21 @@ ob_start();
                   break;
               case 'sua_sp':
                   include 'SanPham/SuaSanPham.php';
+                  break;
+              case 'ds_lh':
+                  include 'LienHe/DanhSachLienHe.php';
+                  break;
+              case 'ds_tt':
+                  include 'TinTuc/DanhSachTinTuc.php';
+                  break;
+              case 'them_tt':
+                  include 'TinTuc/ThemTinTuc.php';
+                  break;
+              case 'sua_tt':
+                  include 'TinTuc/SuaTinTuc.php';
+                  break;
+              case 'xoa_tt':
+                  include 'TinTuc/XoaTinTuc.php';
                   break;
           }
       }

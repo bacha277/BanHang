@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Thêm sản phẩm</title>
+        <title>Sửa sản phẩm</title>
        
     </head>
     <body>
@@ -75,7 +75,7 @@ and open the template in the editor.
         }
         ?>
         <form action="" method="post" enctype="multipart/form-data">
-            <h1>Thêm mới sản phẩm</h1>
+            <h1>Sửa sản phẩm</h1>
             
             <table>
                 <tr>
