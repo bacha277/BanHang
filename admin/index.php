@@ -238,6 +238,18 @@ ob_start();
               case 'sua_dm':
                   include 'DanhMuc/SuaDanhMuc.php';
                   break;
+              case 'ds_sp':
+                  include 'SanPham/DanhSachSanPham.php';
+                  break;
+              case 'xoa_sp':
+                  include 'SanPham/XoaSanPham.php';
+                  break;
+              case 'them_sp':
+                  include 'SanPham/ThemSanPham.php';
+                  break;
+              case 'sua_sp':
+                  include 'SanPham/SuaSanPham.php';
+                  break;
           }
       }
       ?>

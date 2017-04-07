@@ -29,7 +29,7 @@ and open the template in the editor.
         <h1>Danh sách danh mục</h1>
         <table border="1" width="600px">
             <tr>
-                <th>Mã danh mục</th>
+                <th>Id</th>
                 <th>Tên danh mục</th>
                 <th>Tên danh mục cha</th>
                 <th>Số sản phẩm</th>

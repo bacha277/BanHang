@@ -21,7 +21,7 @@ and open the template in the editor.
             $count = $db->exec($sql) or die($db->errorInfo()[2]);
 
             if ($count > 0) {
-                echo 'Them moi thanh cong!';
+                header('location:index.php?page=ds_dm');
             }
         }
         ?>
