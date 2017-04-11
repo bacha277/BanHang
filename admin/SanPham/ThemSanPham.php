@@ -8,7 +8,6 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Thêm sản phẩm</title>
-       
     </head>
     <body>
         <?php
@@ -108,16 +107,22 @@ and open the template in the editor.
                            
 
                             //2. Truy van
-                            $sql = "select id_danh_muc, ten_danh_muc from danh_muc";
+                            $sql = "select id_danh_muc, ten_danh_muc , id_danh_muc_cha from danh_muc";
 
                             //3. Thuc thi
-                            $rows = $db->query($sql);
-
-
+                            $rows = $db->query($sql)->fetchAll();
+                            
                             //4. Lay du lieu
                             foreach ($rows as $r) 
                             {
-                                echo "<option value='$r[0]'>$r[1]</option>";
+                                if ($r[2]==0) {
+                                    echo "<option value='$r[0]'>$r[1]</option>";
+                                    foreach ($rows as $r1) {
+                                        if ($r1[2]==$r[0]) {
+                                            echo "<option value='$r1[0]'>&nbsp;&nbsp;&nbsp;&nbsp;$r1[1]</option>";
+                                        }
+                                    }
+                                }
                             }
                             ?>
                         </select>

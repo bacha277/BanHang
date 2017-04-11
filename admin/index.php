@@ -40,6 +40,12 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <?php
 ob_start();
+session_start();
+if(!isset($_SESSION['loginSession']) || $_SESSION['loginSession']!='loginOk')
+{
+    header('location:login.php');
+}
+
 ?>
 <div class="wrapper">
 
@@ -105,7 +111,7 @@ ob_start();
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="glyphicon glyphicon-log-out"></i></a>
+            <a href="logout.php"><i class="glyphicon glyphicon-log-out"></i></a>
           </li>
         </ul>
       </div>
@@ -252,6 +258,9 @@ ob_start();
                   break;
               case 'ds_lh':
                   include 'LienHe/DanhSachLienHe.php';
+                  break;
+              case 'xem_lh':
+                  include 'LienHe/XemLienHe.php';
                   break;
               case 'ds_tt':
                   include 'TinTuc/DanhSachTinTuc.php';
