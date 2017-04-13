@@ -36,20 +36,21 @@ and open the template in the editor.
             }
         }
         ?>
-        <form action="" method="post">
-            <h1>Cập nhật thông tin danh mục</h1>
+        <div class="box box-warning">
+            <div class="box-header with-border">
+                <h3 class="box-title">Cập nhật thông tin danh mục</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <form role="form" action="" method="post">
+                    <div class="form-group">
+                        <label>Tên danh mục</label>
+                        <input type="text" class="form-control" placeholder="Nhập tên danh mục ..." name="txtTenDM" value="<?php echo "$old_r[0]"; ?>">
+                    </div>
 
-            <table>
-                <tr>
-                    <td>Tên danh mục </td>
-                    <td>
-                        <input type="text" name="txtTenDM" value="<?php echo "$old_r[0]"; ?>"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Danh mục cha </td>
-                    <td>
-                        <select name="slDanhMucCha">
+                    <div class="form-group">
+                        <label>Danh mục cha</label>
+                        <select name="slDanhMucCha" class="form-control">
                             <option value='0'>Không có</option>
                             <?php
                             $sql = "SELECT id_danh_muc,ten_danh_muc FROM danh_muc";
@@ -63,15 +64,12 @@ and open the template in the editor.
                             }
                             ?>
                         </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" name="btnSubmit" value="Cập nhật"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                    </div>
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Cập nhật"/>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

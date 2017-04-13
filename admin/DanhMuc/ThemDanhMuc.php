@@ -25,38 +25,37 @@ and open the template in the editor.
             }
         }
         ?>
-        <form action="" method="post">
-            <h1>Thêm mới danh mục</h1>
 
-            <table>
-                <tr>
-                    <td>Tên danh mục </td>
-                    <td>
-                        <input type="text" name="txtTenDM"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Danh mục cha </td>
-                    <td>
-                        <select name="slDanhMucCha">
+        <div class="box box-warning">
+            <div class="box-header with-border">
+                <h3 class="box-title">Thêm mới danh mục</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <form role="form" action="" method="post">
+                    <div class="form-group">
+                        <label>Tên danh mục</label>
+                        <input type="text" class="form-control" placeholder="Nhập tên danh mục ..." name="txtTenDM">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Danh mục cha</label>
+                        <select name="slDanhMucCha" class="form-control">
                             <option value='0'>Không có</option>
                             <?php
-                            $sql = "SELECT id_danh_muc,ten_danh_muc FROM danh_muc";
+                            $sql = "SELECT id_danh_muc,ten_danh_muc FROM danh_muc where id_danh_muc_cha=0";
                             $rows = $db->query($sql);
                             foreach ($rows as $r) {
                                 echo "<option value='$r[0]'>$r[1]</option>";
                             }
                             ?>
                         </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" name="btnSubmit" value="Thêm mới"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                    </div>
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Thêm mới"/>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

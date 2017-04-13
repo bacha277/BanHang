@@ -41,11 +41,12 @@
 <?php
 ob_start();
 session_start();
-if(!isset($_SESSION['loginSession']) || $_SESSION['loginSession']!='loginOk')
+if(!isset($_SESSION['loginSession']))
 {
     header('location:login.php');
 }
-
+else
+    $ten=$_SESSION['loginSession'];
 ?>
 <div class="wrapper">
 
@@ -71,7 +72,7 @@ if(!isset($_SESSION['loginSession']) || $_SESSION['loginSession']!='loginOk')
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">#Insert name#</span>
+                <span class="hidden-xs"><?php echo $ten;?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -124,7 +125,7 @@ if(!isset($_SESSION['loginSession']) || $_SESSION['loginSession']!='loginOk')
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-            <p style="color: #fff    ">#Insert name#</p>
+            <p style="color: #fff    "><?php echo $ten;?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
         

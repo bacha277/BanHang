@@ -41,19 +41,20 @@
             $user = $_POST['txtUser'];
             $pass = md5($_POST['txtPass']);
 
-            $sql = "select count(*) from tai_khoan where ten_dang_nhap='$user' and mat_khau = '$pass' and quyen=0";
+            $sql = "select count(*),ho_ten from tai_khoan where ten_dang_nhap='$user' and mat_khau = '$pass' and quyen=0";
 
             $rows = $db->query($sql);
-
-            if ($rows->fetch()[0] > 0) {
-
+            $r=$rows->fetch();
+            if ($r[0] > 0) {
+//                $ten=$r[1];
+                
                 //Khoi tao session:
                 session_start();
 
                 //Luu session
-                $_SESSION['loginSession'] = 'loginOk';
+                $_SESSION['loginSession'] = $r[1];
 
-                header('location:index.php');
+                header("location:index.php");
             }
         }
         ?>
