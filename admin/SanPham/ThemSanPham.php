@@ -66,13 +66,13 @@ and open the template in the editor.
                     <div class="box-header">
                         <h3 class="box-title">Thông tin chi tiết</h3>
                         <div class="pull-right box-tools">
-                            <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <button type="button" class="btn btn-info btn-sm" data-widget="collapse">
                                 <i class="fa fa-minus"></i></button>
-                            <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <button type="button" class="btn btn-info btn-sm" data-widget="remove">
                                 <i class="fa fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="box-body pad">
+                    <div class="box-body pad" style="display: none;">
                         <textarea id="editor1" rows="10" cols="80" class="ckeditor" name="txtCT"></textarea>
                     </div>
                 </div>
@@ -80,13 +80,13 @@ and open the template in the editor.
                     <div class="box-header">
                         <h3 class="box-title">Khuyến mãi</h3>
                         <div class="pull-right box-tools">
-                            <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <button type="button" class="btn btn-info btn-sm" data-widget="collapse">
                                 <i class="fa fa-minus"></i></button>
-                            <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <button type="button" class="btn btn-info btn-sm" data-widget="remove">
                                 <i class="fa fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="box-body pad">
+                    <div class="box-body pad" style="display: none;">
                         <textarea id="editor1" rows="10" cols="80" class="ckeditor" name="txtKM"></textarea>
                     </div>
                 </div>

@@ -9,14 +9,14 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title>Danh sách liên hệ</title>
         <script>
-            function check(ma,tt)
+            function check(ma, tt)
             {
-                if (tt==0) {
+                if (tt == 0) {
                     if (confirm('Bạn có chắc chắn muốn đặt lại trạng thái của liên hệ này ?') == true)
                     {
                         window.location = "index.php?page=xem_lh&ma=" + ma;
                     }
-    
+
                 }
             }
         </script>
@@ -35,7 +35,6 @@ and open the template in the editor.
                             <th>Họ tên</th>
                             <th>Email</th>
                             <th>Số điện thoại</th>
-                            <th>Tiêu đề</th>
                             <th>Nội dung</th>
                             <th>Trạng thái</th>
                             <th>Thao tác</th>
@@ -61,8 +60,22 @@ and open the template in the editor.
                             . "<td>$r[1]</td>"
                             . "<td>$r[2]</td>"
                             . "<td>$r[3]</td>"
-                            . "<td>$r[4]</td>"
-                            . "<td>$r[5]</td>"
+                            . "<td>
+                                <div class='box box-info' style='margin-top:-10px'>
+                                        <div class='box-header'>
+                                            <h3 class='box-title'>Tiêu đề : $r[4]</h3>
+                                            <div class='pull-right box-tools'>
+                                                <button type='button' class='btn btn-info btn-sm' data-widget='collapse'>
+                                                    <i class='fa fa-minus'></i></button>
+                                                <button type='button' class='btn btn-info btn-sm' data-widget='remove'>
+                                                    <i class='fa fa-times'></i></button>
+                                            </div>
+                                        </div>
+                                        <div class='box-body pad'  style='display: none;'>
+                                            <textarea id='editor1' rows='10' cols='30' class='ckeditor' readonly>$r[5]</textarea>
+                                        </div>
+                                    </div>
+                               </td>"
                             . "<td>$tt</td>"
                             . "<td>"
                             . "<a href='#' onclick='check($r[0],$r[6])'><i class='fa fa-eye' aria-hidden='true'></i></a>"
