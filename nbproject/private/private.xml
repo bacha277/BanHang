@@ -5,14 +5,17 @@
         <group>
             <file>file:/D:/xampp/htdocs/BanHang/admin/SanPham/SuaSanPham.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/admin/DanhMuc/DanhSachDanhMuc.php</file>
-            <file>file:/D:/xampp/htdocs/BanHang/admin/login.php</file>
-            <file>file:/D:/xampp/htdocs/BanHang/admin/DanhMuc/ThemDanhMuc.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/admin/SanPham/DanhSachSanPham.php</file>
-            <file>file:/D:/xampp/htdocs/BanHang/admin/SanPham/ThemSanPham.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/admin/TinTuc/DanhSachTinTuc.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/admin/index.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/admin/DanhMuc/XoaDanhMuc.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/admin/TinTuc/ThemTinTuc.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/admin/logout.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/admin/DanhMuc/SuaDanhMuc.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/admin/TinTuc/SuaTinTuc.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/admin/login.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/admin/SanPham/ThemSanPham.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/admin/LienHe/DanhSachLienHe.php</file>
         </group>
     </open-files>
 </project-private>
