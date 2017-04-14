@@ -51,21 +51,23 @@ and open the template in the editor.
             $dd = $_FILES['fHA']['type'];
 
             //2. Cau truy van
-            $sql = "update san_pham set ten_san_pham='$ten_sp',anh_san_pham='$ten_anh',thong_tin_ct='$ct',khuyen_mai='$km',hien_thi='$ht',gia=$dg,ngay_dang=curdate(),id_danh_muc=$madm where id_san_pham=$ma";
 
+            if ($_FILES['fHA']['size'] == 0)
+                $sql = "update san_pham set ten_san_pham='$ten_sp',thong_tin_ct='$ct',khuyen_mai='$km',hien_thi='$ht',gia=$dg,ngay_dang=curdate(),id_danh_muc=$madm where id_san_pham=$ma";
+            else
+                $sql = "update san_pham set ten_san_pham='$ten_sp',anh_san_pham='$ten_anh',thong_tin_ct='$ct',khuyen_mai='$km',hien_thi='$ht',gia=$dg,ngay_dang=curdate(),id_danh_muc=$madm where id_san_pham=$ma";
 
             //3. Thuc thi
-            $count = $db->exec($sql) or die($db->errorInfo()[2]);
+            $count = $db->exec($sql);
 
-            //4. Kiem tra
-            if ($count > 0) {
-                //luu anh
+            //luu anh
+            if ($_FILES['fHA']['size'] > 0) {
                 unlink($old_link_anh);
 
                 move_uploaded_file($_FILES['fHA']['tmp_name'], "../img/$ten_anh");
-
-                header('location:index.php?page=ds_sp');
             }
+
+            header('location:index.php?page=ds_sp');
         }
         ?>
         <form action="" method="post" enctype="multipart/form-data">
