@@ -38,13 +38,14 @@
         //1. connect
         include '../connect.php';
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $user = $_POST['txtUser'];
+            
+            $user = str_replace("'","",$_POST['txtUser']);
             $pass = md5($_POST['txtPass']);
-
+            
             $sql = "select count(*),ho_ten from tai_khoan where ten_dang_nhap='$user' and mat_khau = '$pass' and quyen=0";
-
-            $rows = $db->query($sql);
+            $rows=$db->query($sql);
             $r=$rows->fetch();
+            echo "$r[0]";
             if ($r[0] > 0) {
 //                $ten=$r[1];
                 
