@@ -4,13 +4,7 @@
      
       <div class="center_title_bar">Danh sách sản phẩm</div>
       <?php
-        $s = "select count(*) from san_pham where hien_thi=1";
-        $rs = $db->query($s);
-        $sosp=$rs->fetch()[0];
-        
         $sosp_tren_trang = 6;
-        $so_trang = ceil($sosp/$sosp_tren_trang);
-        
         $start=0;
         if(isset($_REQUEST['p']))
         {
@@ -27,9 +21,10 @@
             $sql.= " and ten_san_pham like '%$key%'";
         }
         $sql.=" order by id_san_pham desc";
+        $count=count($db->query($sql)->fetchAll());
         $sql.=" limit $start,$sosp_tren_trang";
         $rows = $db->query($sql);
-
+        
         foreach ($rows as $r) {
             echo '<div class="prod_box">
             <div class="center_prod_box">
@@ -37,9 +32,10 @@
               <div class="product_img"><a href="index.php?page=pr_detail&id=' . $r[0] . '"><img src="img/' . $r[2] . '" alt="" border="0" width="100px" height="100px"/></a></div>
               <div class="prod_price"> <span class="price">' . number_format($r[3]) . ' VND </span></div>
             </div>
-            <div class="prod_details_tab"> <a href="#" class="prod_buy">Thêm vào giỏ</a> <a href="index.php?page=pr_detail&id=' . $r[0] . '" class="prod_details">Chi tiết</a> </div>
+            <div class="prod_details_tab"> <a href="index.php?page=cart&id='.$r[0].'" class="prod_buy">Thêm vào giỏ</a> <a href="index.php?page=pr_detail&id=' . $r[0] . '" class="prod_details">Chi tiết</a> </div>
           </div>';
         }
+        $so_trang = ceil($count/$sosp_tren_trang);
       ?>
       <div style="clear: both; margin-top: 20px; text-align: center;">
           <?php

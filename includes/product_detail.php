@@ -22,7 +22,7 @@ if(isset($_REQUEST['id']))
               Thông tin chi tiết :<span class="blue"> <?php if(isset($r)) echo $r[5]; ?> </span><br />
             </div>
             <div class="prod_price_big"> <span class="price"><?php if(isset($r)) echo number_format ($r[3]); ?> VND</span></div>
-            <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Thêm vào giỏ</a> </div>
+            <a href="<?php echo "index.php?page=cart&id=$id"?>" class="prod_buy">Thêm vào giỏ</a> </div>
         </div>
           <h2>Khuyến mại</h2>
           <div>

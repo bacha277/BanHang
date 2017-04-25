@@ -32,6 +32,19 @@
 <div id="main_container">
 <?php
 include 'connect.php';
+session_start();
+if (isset($_SESSION['userLoginSession'])) {
+    $id=$_SESSION['userLoginSession'];
+    $sql="select ho_ten from tai_khoan where id_tai_khoan='$id'";
+    $ho_ten=$db->query($sql)->fetch()[0];
+}
+
+$total = 0;
+if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+    foreach ($_SESSION['cart'] as $r) {
+        $total+=$r['dg'] * $r['sl'];
+    }
+}
 ?>
     
   <?php
@@ -64,6 +77,21 @@ include 'connect.php';
                 break;
             case 'pr_detail':
                 include 'includes/product_detail.php';
+                break;
+            case 'cart':
+                include 'includes/cart.php';
+                break;
+            case 'del_cart':
+                include 'includes/del_cart.php';
+                break;
+            case 'register':
+                include 'includes/register.php';
+                break;
+            case 'login':
+                include 'includes/login.php';
+                break;
+            case 'register_success':
+                include 'includes/register_success.php';
                 break;
         }
     }

@@ -45,10 +45,7 @@
             $sql = "select count(*),ho_ten from tai_khoan where ten_dang_nhap='$user' and mat_khau = '$pass' and quyen=0";
             $rows=$db->query($sql);
             $r=$rows->fetch();
-            echo "$r[0]";
             if ($r[0] > 0) {
-//                $ten=$r[1];
-                
                 //Khoi tao session:
                 session_start();
 
