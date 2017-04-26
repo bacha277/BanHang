@@ -182,6 +182,17 @@ else
         </li>
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Đơn hàng</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.php?page=ds_dh"><i class="fa fa-circle-o"></i> Danh sách đơn hàng</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-comment-o"></i> <span>Liên hệ</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -260,6 +271,15 @@ else
                   break;
               case 'xoa_tt':
                   include 'TinTuc/XoaTinTuc.php';
+                  break;
+              case 'ds_dh':
+                  include 'DonHang/DanhSachDonHang.php';
+                  break;
+              case 'xl_dh':
+                  include 'DonHang/XuLyDonHang.php';
+                  break;
+              case 'dh_ct':
+                  include 'DonHang/DonHangChiTiet.php';
                   break;
           }
       } else
