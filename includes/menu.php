@@ -4,7 +4,7 @@
         <li class="divider"></li>
         <li><a href="index.php?page=products" class="nav">Sản phẩm</a></li>
         <li class="divider"></li>
-        <li><a href="#" class="nav">Tin tức</a></li>
+        <li><a href="index.php?page=news" class="nav">Tin tức</a></li>
         <li class="divider"></li>
         <li><a href="#" class="nav">Liên hệ</a></li>
         <li class="divider"></li>

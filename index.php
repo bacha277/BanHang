@@ -72,6 +72,10 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                 include 'includes/products.php';
                 break;
             case 'news':
+                include 'includes/news.php';
+                break;
+            case 'news_detail':
+                include 'includes/news_detail.php';
                 break;
             case 'contact':
                 break;

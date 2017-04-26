@@ -1,9 +1,9 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_SESSION['userLoginSession'])) {
-
+        $gc=$_POST['txtGhiChu'];
         $sql = "insert into don_hang (id_tai_khoan, ghi_chu, tong_tien, trang_thai,ngay) values"
-                . "('$id','','$total',0,now())";
+                . "('$id','$gc','$total',0,now())";
 
         $db->exec($sql);
         $madh = $db->lastInsertId();
@@ -21,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         header('location:index.php?page=del_cart');
     } else {
-        echo '<div>Bạn phải đăng nhập để đặt hàng .</div>';
-    }
+        header('location:index.php?page=login');
+    } 
 }
 ?>    
 <div class="center_content">
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <?php
     if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-        echo '<table width="100%" border="1">
+        echo '<table width="100%" border="1" style="margin-bottom:30px">
             <tr>
                 <th>Số thứ tự</th>
                 <th>Sản phẩm</th>
@@ -71,18 +71,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             . "<td>" . $r['dg'] . "</td>"
             . "<td>" . $r['sl'] . "</td>"
             . "<td>" . number_format($r['dg'] * $r['sl']) . "</td>"
-            . "<td><a href='index.php?page=del_cart&id=" . $r['ma'] . "'>Xoa</a></td>"
+            . "<td><a href='index.php?page=del_cart&id=" . $r['ma'] . "'>Xóa</a></td>"
             . "</tr>";
         }
         echo '</table>
         <a href="index.php?page=del_cart">Hủy giỏ hàng</a>';
         echo '<form method="post" action="">
-            <input type="submit" value="Gửi đơn hàng"/>
+            <div style="margin-top:30px">Ghi chú <input type="text" name="txtGhiChu" size="50"/></div>
+            <div style="text-align:center;margin-top:30px"><input type="submit" value="Gửi đơn hàng"/></div>
         </form>';
     } else {
         echo '<div class="center_content"><h2>Không có sản phẩm nào trong giỏ hàng của bạn !</h2></div>';
     }
     ?>
-
-
+    
 </div>
