@@ -35,8 +35,10 @@ include 'connect.php';
 session_start();
 if (isset($_SESSION['userLoginSession'])) {
     $id=$_SESSION['userLoginSession'];
-    $sql="select ho_ten from tai_khoan where id_tai_khoan='$id'";
+    $sql="select ho_ten,email,sdt from tai_khoan where id_tai_khoan='$id'";
     $ho_ten=$db->query($sql)->fetch()[0];
+    $email=$db->query($sql)->fetch()[1];
+    $sdt=$db->query($sql)->fetch()[2];
 }
 
 $total = 0;
@@ -78,6 +80,10 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                 include 'includes/news_detail.php';
                 break;
             case 'contact':
+                include 'includes/contact.php';
+                break;
+            case 'contact_success':
+                include 'includes/contact_success.php';
                 break;
             case 'pr_detail':
                 include 'includes/product_detail.php';
@@ -93,6 +99,9 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                 break;
             case 'login':
                 include 'includes/login.php';
+                break;
+            case 'logout':
+                include 'includes/logout.php';
                 break;
             case 'register_success':
                 include 'includes/register_success.php';
