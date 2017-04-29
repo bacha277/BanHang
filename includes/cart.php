@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <?php
     if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-        echo '<table width="100%" border="1" style="margin-bottom:30px">
+        echo '<table width="100%" border="1" style="margin-bottom:30px;">
             <tr>
                 <th>Số thứ tự</th>
                 <th>Sản phẩm</th>
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             . "<td>$i</td>"
             . "<td>" . $r['ten'] . "</td>"
             . "<td><img src='img/" . $r['ha'] . "' width='60px'/></td>"
-            . "<td>" . $r['dg'] . "</td>"
+            . "<td>" . number_format($r['dg']) . "</td>"
             . "<td>" . $r['sl'] . "</td>"
             . "<td>" . number_format($r['dg'] * $r['sl']) . "</td>"
             . "<td><a href='index.php?page=del_cart&id=" . $r['ma'] . "'>Xóa</a></td>"

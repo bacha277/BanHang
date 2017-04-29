@@ -5,8 +5,14 @@
         <group>
             <file>file:/D:/xampp/htdocs/BanHang/includes/cart.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/includes/menu.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/includes/logout.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/includes/contact.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/includes/news.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/admin/index.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/ckeditor/config.js</file>
             <file>file:/D:/xampp/htdocs/BanHang/index.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/includes/contact_success.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/includes/register.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/includes/news_detail.php</file>
         </group>
     </open-files>

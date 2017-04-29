@@ -177,7 +177,7 @@ else
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
+            <li><a href="index.php?page=ds_tk"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -280,6 +280,9 @@ else
                   break;
               case 'dh_ct':
                   include 'DonHang/DonHangChiTiet.php';
+                  break;
+              case 'ds_tk':
+                  include 'TaiKhoan/DanhSachTaiKhoan.php';
                   break;
           }
       } else
