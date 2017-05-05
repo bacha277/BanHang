@@ -11,10 +11,10 @@
             $p = $_REQUEST['p'];
             $start=($p-1)*$sosp_tren_trang;
         }
-        $sql = "select id_san_pham, ten_san_pham, anh_san_pham, gia, hien_thi from san_pham where hien_thi=1";
+        $sql = "select id_san_pham, ten_san_pham, anh_san_pham, gia, hien_thi from san_pham natural join danh_muc where hien_thi=1";
         if (isset($_REQUEST['id'])) {
             $id = $_REQUEST['id'];
-            $sql.=" and id_danh_muc= $id";
+            $sql.=" and id_danh_muc= $id or id_danh_muc_cha=$id";
         }
         if (isset($_REQUEST['key'])) {
             $key = $_REQUEST['key'];
