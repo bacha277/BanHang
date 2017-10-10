@@ -45,12 +45,15 @@ session_start();
             $user = str_replace("'","",$_POST['txtUser']);
             $pass = md5($_POST['txtPass']);
             
-            $sql = "select count(*),ho_ten from tai_khoan where ten_dang_nhap='$user' and mat_khau = '$pass' and quyen=0";
+            $sql = "select count(*),ho_ten,quyen from tai_khoan where ten_dang_nhap='$user' and mat_khau = '$pass' and (quyen=0 or quyen=2)";
             $rows=$db->query($sql);
             $r=$rows->fetch();
             if ($r[0] > 0) {
                 //Luu session
                 $_SESSION['loginSession'] = $r[1];
+                if ($r[2]==0) {
+                    $_SESSION['role']=$r[2];
+                }
 
                 header("location:index.php");
             }

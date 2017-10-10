@@ -180,6 +180,11 @@ else
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?page=ds_tk"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
+            <?php
+            if (isset($_SESSION['role'])) {
+                echo '<li><a href="index.php?page=th_ad"><i class="fa fa-circle-o"></i> Thêm tài khoản admin</a></li>';
+            }
+            ?>
           </ul>
         </li>
         <li class="treeview">
@@ -285,6 +290,9 @@ else
                   break;
               case 'ds_tk':
                   include 'TaiKhoan/DanhSachTaiKhoan.php';
+                  break;
+              case 'th_ad':
+                  include 'TaiKhoan/ThemAdmin.php';
                   break;
           }
       } else
