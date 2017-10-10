@@ -1,3 +1,7 @@
+<?php
+    ob_start();
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,8 +43,6 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <?php
-ob_start();
-session_start();
 if(!isset($_SESSION['loginSession']))
 {
     header('location:login.php');

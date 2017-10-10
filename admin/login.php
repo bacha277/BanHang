@@ -1,4 +1,7 @@
-
+<?php
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,9 +49,6 @@
             $rows=$db->query($sql);
             $r=$rows->fetch();
             if ($r[0] > 0) {
-                //Khoi tao session:
-                session_start();
-
                 //Luu session
                 $_SESSION['loginSession'] = $r[1];
 
