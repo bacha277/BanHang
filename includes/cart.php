@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="css/table.css">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_SESSION['userLoginSession'])) {
@@ -51,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <?php
     if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-        echo '<table width="100%" border="1" style="margin-bottom:30px;">
+        echo '<table>
             <tr>
                 <th>Số thứ tự</th>
                 <th>Sản phẩm</th>
