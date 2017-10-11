@@ -1,0 +1,1 @@
+<div style="color:red;font-size: 50px"><i class="fa fa-times-circle-o"></i>Tài khoản của bạn không có quyền thêm mới admin !</div>

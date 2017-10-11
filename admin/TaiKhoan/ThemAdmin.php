@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION['role'])) {
+    header('location:index.php?page=kq_ad');
+}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['txtId'];
     $pass = md5($_POST['txtPass']);
