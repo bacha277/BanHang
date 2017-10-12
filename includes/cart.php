@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>    
 <div class="center_content" id="ct">
 
-    <div class="center_title_bar">Giỏ hàng của bạn</div>
+    <div class="center_title_bar" style="width:100%;text-indent: 20px">Giỏ hàng của bạn</div>
 
     <?php
     if (isset($_REQUEST['id'])) {
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <?php
     if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-        echo '<table>
+        echo '<table style="width:100%">
             <tr>
                 <th>Số thứ tự</th>
                 <th>Sản phẩm</th>
