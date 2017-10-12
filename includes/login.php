@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="css/login.css">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -15,28 +16,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } 
 }
 ?>
+
+
+
 <div class="center_content">
     <div class="center_title_bar">Đăng nhập</div>
+
     <form action="" method="post">
         <div class="prod_box_big">
-            <div class="center_prod_box_big">
-                <div class="contact_form">
-                    <div class="form_row">
-                        <label class="contact"><strong>Tên đăng nhập</strong></label>
-                        <input type="text" class="contact_input" name="txtUser"/>
-                    </div>
-                    <div class="form_row">
-                        <label class="contact"><strong>Mật khẩu</strong></label>
-                        <input type="password" class="contact_input" name="txtPass"/>
-                    </div>
-                    <div class="form_row">
-                        <input type="submit" value="Đăng nhập"/>
-                    </div>
-                    <?php
-                    if ($_SERVER['REQUEST_METHOD'] == 'POST'&&$r[0]==0) {
-                        echo "<font style='color:red'>Tên đăng nhập hoặc mật khẩu không đúng !</font>";
-                    }
-                    ?>
+            <div class="login-page" id="login">
+                <div class="form">
+                    <form class="login-form">
+                        <?php
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST' && $r[0] == 0) {
+                            echo "<font style='color:red'>Tên đăng nhập hoặc mật khẩu không đúng !</font>";
+                        }
+                        ?>
+                        <input type="text" placeholder="Tên đăng nhập" name="txtUser" required/>
+                        <input type="password" placeholder="Mật khẩu" name="txtPass" required/>
+                        <button>Đăng nhập</button>
+                        <p class="message">Bạn chưa đăng ký? <a href="index.php?page=register">Đăng ký ngay</a></p>
+                    </form>
                 </div>
             </div>
         </div>
