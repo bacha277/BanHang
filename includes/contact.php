@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css"  href="css/contact.css">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['txtName'];
@@ -16,46 +17,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <div class="center_content">
-    <div class="center_title_bar">Gửi liên hệ</div>
-    <form action="" method="post">
-        <div class="prod_box_big">
-            <div class="center_prod_box_big">
-                <div class="contact_form">
-                    <div class="form_row">
-                        <label class="contact"><strong>Họ tên</strong></label>
-                        <input type="text" class="contact_input" name="txtName" value="<?php
+    <div class="container" id="ct">  
+        <form id="contact" action="" method="post">
+            <h3>Gửi liên hệ</h3>
+            <h4>Hãy liên hệ với chúng tôi !</h4>
+            <fieldset>
+                <input placeholder="Họ tên" type="text" tabindex="1" required autofocus name="txtName" value="<?php
                                                                                         if (isset($ho_ten)) {
                                                                                             echo $ho_ten;
                                                                                         }
-                                                                                       ?>"/>
-                    </div>
-                    <div class="form_row">
-                        <label class="contact"><strong>Email</strong></label>
-                        <input type="text" class="contact_input" name="txtEmail" value="<?php
+                                                                                       ?>">
+            </fieldset>
+            <fieldset>
+                <input placeholder="Email" type="email" tabindex="2" required name="txtEmail" value="<?php
                                                                                         if (isset($email)) {
                                                                                             echo $email;
                                                                                         }
-                                                                                       ?>"/>
-                    </div>
-                    <div class="form_row">
-                        <label class="contact"><strong>Số điện thoại</strong></label>
-                        <input type="text" class="contact_input" name="txtPhone" value="<?php
+                                                                                       ?>">
+            </fieldset>
+            <fieldset>
+                <input placeholder="Số điện thoại (Không bắt buộc)" type="tel" tabindex="3" name="txtPhone" value="<?php
                                                                                         if (isset($sdt)) {
                                                                                             echo $sdt;
                                                                                         }
-                                                                                       ?>"/>
-                    </div>
-                    <div class="form_row">
-                        <label class="contact"><strong>Tiêu đề</strong></label>
-                        <input type="text" class="contact_input" name="txtTitle"/>
-                    </div>
-                    <div class="form_row">
-                        <label class="contact"><strong>Nội dung</strong></label>
-                        <textarea class="contact_textarea" style="width: 100%" name="areaContent"></textarea>
-                    </div>
-                    <div class="form_row"><input type="submit" value="Gửi"/></div>
-                </div>
-            </div>
-        </div>
-    </form>
+                                                                                       ?>">
+            </fieldset>
+            <fieldset>
+                <input placeholder="Tiêu đề" type="text" tabindex="4" required name="txtTitle">
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Nội dung" tabindex="5" required name="areaContent"></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" value="Gửi" type="submit" id="contact-submit" data-submit="...Đang gửi">Gửi</button>
+            </fieldset>
+        </form>
+    </div>
 </div>
+
+
