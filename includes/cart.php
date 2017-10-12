@@ -1,4 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/table.css">
+<link rel="stylesheet" type="text/css" href="css/a.css">
+<link rel="stylesheet" type="text/css" href="css/contact.css">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_SESSION['userLoginSession'])) {
@@ -26,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } 
 }
 ?>    
-<div class="center_content">
+<div class="center_content" id="ct">
 
     <div class="center_title_bar">Giỏ hàng của bạn</div>
 
@@ -72,14 +74,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             . "<td>" . number_format($r['dg']) . "</td>"
             . "<td>" . $r['sl'] . "</td>"
             . "<td>" . number_format($r['dg'] * $r['sl']) . "</td>"
-            . "<td><a href='index.php?page=del_cart&id=" . $r['ma'] . "'>Xóa</a></td>"
+            . "<td><a href='index.php?page=del_cart&id=" . $r['ma'] . "' class='cartAnchor'>Xóa</a></td>"
             . "</tr>";
         }
         echo '</table>
-        <a href="index.php?page=del_cart">Hủy giỏ hàng</a>';
-        echo '<form method="post" action="">
-            <div style="margin-top:30px">Ghi chú <input type="text" name="txtGhiChu" size="50"/></div>
-            <div style="text-align:center;margin-top:30px"><input type="submit" value="Gửi đơn hàng"/></div>
+        <a href="index.php?page=del_cart" class="cartAnchor" style="float:right">Xóa tất cả</a>';
+        echo '<form method="post" action="" id="contact" style="margin-top:30px">
+            <fieldset>
+                <textarea placeholder="Ghi chú" tabindex="5" required name="txtGhiChu"></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" value="Gửi" type="submit" id="contact-submit" data-submit="...Đang gửi">Gửi</button>
+            </fieldset>
         </form>';
     } else {
         echo '<div class="center_content"><h2>Không có sản phẩm nào trong giỏ hàng của bạn !</h2></div>';

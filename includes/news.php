@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="css/table.css">
+<link rel="stylesheet" type="text/css" href="css/a.css">
 <div class="center_content">
     <div class="center_title_bar">Tin tức</div>
     <table width="100%">
@@ -14,7 +16,7 @@
             foreach ($rows as $r) {
                 echo "<tr>"
                 . "<td><img src='img/$r[2]' width='96px' height='60px'/></td>"
-                . "<td><a href='index.php?page=news_detail&id=$r[0]'>$r[1]</a></td>"
+                . "<td><a class='news_a' href='index.php?page=news_detail&id=$r[0]'>$r[1]</a></td>"
                 . "</td>"
                 . "</tr>";
             }
