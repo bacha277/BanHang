@@ -29,6 +29,7 @@
 }
 
 #ct #contact input[type="text"],
+#ct #contact input[type="password"],
 #ct #contact input[type="email"],
 #ct #contact input[type="tel"],
 #ct #contact input[type="url"],
@@ -66,6 +67,7 @@
 }
 
 #ct #contact input[type="text"],
+#ct #contact input[type="password"],
 #ct #contact input[type="email"],
 #ct #contact input[type="tel"],
 #ct #contact input[type="url"],
@@ -78,6 +80,7 @@
 }
 
 #ct #contact input[type="text"]:hover,
+#ct #contact input[type="password"]:hover,
 #ct #contact input[type="email"]:hover,
 #ct #contact input[type="tel"]:hover,
 #ct #contact input[type="url"]:hover,
