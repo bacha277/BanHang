@@ -20,6 +20,11 @@
             $key = $_REQUEST['key'];
             $sql.= " and ten_san_pham like '%$key%'";
         }
+        if (isset($_REQUEST['low']) && isset($_REQUEST['high'])) {
+            $low=$_REQUEST['low'];
+            $high=$_REQUEST['high'];
+            $sql.=" and gia between $low and $high";
+        }
         $sql.=" order by id_san_pham desc";
         $count=count($db->query($sql)->fetchAll());
         $sql.=" limit $start,$sosp_tren_trang";
@@ -39,21 +44,20 @@
       ?>
       <div style="clear: both; margin-top: 20px; text-align: center;">
           <?php
-          if($so_trang>1)
-          {
+          if ($so_trang > 1) {
               $link = 'index.php?page=products';
-              if(isset($_REQUEST['id']))
-              {
-                  $link.= '&id='.$_REQUEST['id'];
+              if (isset($_REQUEST['id'])) {
+                  $link.= '&id=' . $_REQUEST['id'];
               }
-              if(isset($_REQUEST['key']))
-              {
-                  $link.= '&key='.$_REQUEST['key'];
+              if (isset($_REQUEST['key'])) {
+                  $link.= '&key=' . $_REQUEST['key'];
               }
-              
+              if (isset($_REQUEST['low']) && isset($_REQUEST['high'])) {
+                  $link.= '&low=' . $_REQUEST['low'];
+                  $link.= '&high=' . $_REQUEST['high'];
+              }
               echo '<div class="pagination">';
-              for($i=1; $i<=$so_trang; $i++)
-              {
+              for ($i = 1; $i <= $so_trang; $i++) {
                   echo "<a href='$link&p=$i'>Trang $i</a>";
               }
               echo '</div>';
