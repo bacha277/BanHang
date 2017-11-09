@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </fieldset>
         </form>';
     } else {
-        echo '<div class="center_content"><h2>Không có sản phẩm nào trong giỏ hàng của bạn !</h2></div>';
+        echo '<div class="center_prod_box_big" style="margin-left:20px"><h2>Không có sản phẩm nào trong giỏ hàng của bạn !</h2></div>';
     }
     ?>
     
