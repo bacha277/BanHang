@@ -33,11 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="center_title_bar" style="width:100%;text-indent: 20px">Giỏ hàng của bạn</div>
 
     <?php
-    if (isset($_REQUEST['id'])) {
+    if (isset($_REQUEST['id'])&&isset($_REQUEST['sl_mua'])) {
         $id_san_pham = $_REQUEST['id'];
-        //1. San pham da co trong gio hang => tang so luong len 1
+        $sl_mua = $_REQUEST['sl_mua'];
+        //1. San pham da co trong gio hang => tang so luong
         if (isset($_SESSION['cart'][$id_san_pham])) {
-            $_SESSION['cart'][$id_san_pham]['sl']+=1;
+            $_SESSION['cart'][$id_san_pham]['sl']+=$sl_mua;
         }
         //2. San pham chua co => them vao 
         else {
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $r = $rows->fetch();
 
-            $_SESSION['cart'][$id_san_pham] = array('ma' => $r[0], 'ten' => $r[1], 'ha' => $r[2], 'dg' => $r[3], 'sl' => 1);
+            $_SESSION['cart'][$id_san_pham] = array('ma' => $r[0], 'ten' => $r[1], 'ha' => $r[2], 'dg' => $r[3], 'sl' => $sl_mua);
         }
     }
     ?>
@@ -81,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="index.php?page=del_cart" class="cartAnchor" style="float:right">Xóa tất cả</a>';
         echo '<form method="post" action="" id="contact" style="margin-top:30px">
             <fieldset>
-                <textarea placeholder="Ghi chú" tabindex="5" required name="txtGhiChu"></textarea>
+                <textarea placeholder="Ghi chú" tabindex="5" name="txtGhiChu"></textarea>
             </fieldset>
             <fieldset>
                 <button name="submit" value="Gửi" type="submit" id="contact-submit" data-submit="...Đang gửi">Gửi</button>
