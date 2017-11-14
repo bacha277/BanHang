@@ -5,7 +5,6 @@
     <div id="logo"> <a href="./index.php"><img src="img/logo.jpg" alt="" border="0" width="182" height="85" /></a> </div>
   </div>-->
 <style>
-    * {box-sizing:border-box}
     .mySlides {display:none}
 
     /* Slideshow container */
@@ -13,26 +12,6 @@
         max-width: 1000px;
         position: relative;
         margin: auto;
-    }
-
-    /* Caption text */
-    .text {
-        color: #f2f2f2;
-        font-size: 15px;
-        padding: 8px 12px;
-        position: absolute;
-        bottom: 8px;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Number text (1/3 etc) */
-    .numbertext {
-        color: #f2f2f2;
-        font-size: 12px;
-        padding: 8px 12px;
-        position: absolute;
-        top: 0;
     }
 
     /* The dots/bullets/indicators */
@@ -68,10 +47,6 @@
         to {opacity: 1}
     }
 
-    /* On smaller screens, decrease text size */
-    @media only screen and (max-width: 300px) {
-        .text {font-size: 11px}
-    }
 </style>
 
 
@@ -90,7 +65,6 @@
     </div>
 
 </div>
-<br>
 
 <div style="text-align:center">
     <span class="dot"></span> 
