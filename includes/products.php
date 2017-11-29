@@ -12,8 +12,8 @@
             $start=($p-1)*$sosp_tren_trang;
         }
         $sql = "select id_san_pham, ten_san_pham, anh_san_pham, gia, hien_thi from san_pham natural join danh_muc where hien_thi=1";
-        if (isset($_REQUEST['id'])) {
-            $id = $_REQUEST['id'];
+        if (isset($_REQUEST['cat_id'])) {
+            $id = $_REQUEST['cat_id'];
             $sql.=" and id_danh_muc= $id or id_danh_muc_cha=$id";
         }
         if (isset($_REQUEST['key'])) {
@@ -46,8 +46,8 @@
           <?php
           if ($so_trang > 1) {
               $link = 'index.php?page=products';
-              if (isset($_REQUEST['id'])) {
-                  $link.= '&id=' . $_REQUEST['id'];
+              if (isset($_REQUEST['cat_id'])) {
+                  $link.= '&cat_id=' . $_REQUEST['cat_id'];
               }
               if (isset($_REQUEST['key'])) {
                   $link.= '&key=' . $_REQUEST['key'];
