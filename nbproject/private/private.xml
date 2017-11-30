@@ -5,7 +5,10 @@
         <group>
             <file>file:/D:/xampp/htdocs/BanHang/includes/cart.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/includes/register_success.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/includes/right.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/includes/left.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/includes/register.php</file>
+            <file>file:/D:/xampp/htdocs/BanHang/includes/products.php</file>
             <file>file:/D:/xampp/htdocs/BanHang/admin/TaiKhoan/ThemAdmin.php</file>
         </group>
     </open-files>

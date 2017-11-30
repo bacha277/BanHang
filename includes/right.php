@@ -3,9 +3,9 @@
     <form method="get">
         <input type="hidden" name="page" value="products"/>
         <?php
-            if (isset($_REQUEST['id'])) {
-                $id=$_REQUEST['id'];
-                echo "<input type='hidden' name='id' value='$id'/>";
+            if (isset($_REQUEST['cat_id'])) {
+                $id=$_REQUEST['cat_id'];
+                echo "<input type='hidden' name='cat_id' value='$id'/>";
             }
             if (isset($_REQUEST['low']) && isset($_REQUEST['high'])) {
                 $low=$_REQUEST['low'];
