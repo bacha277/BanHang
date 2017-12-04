@@ -1,3 +1,15 @@
+<link rel="stylesheet" type="text/css" href="css/select.css">
+<script>
+    function onValueChange(){
+        var eLow = document.getElementById("slLow");
+        var eHigh = document.getElementById("slHigh");
+        var low = eLow.options[eLow.selectedIndex].value;
+        var high = eHigh.options[eHigh.selectedIndex].value;
+        if (low!=-1&&high!=-1) {
+    window.location.href='index.php?page=products&low='+low+'&high='+high+'';
+}
+    }
+</script>
 <div class="right_content">
     
     <form method="get">
@@ -46,7 +58,7 @@
     </div>
 
     <div class="title_box">Tìm theo giá</div>
-    <ul class="left_menu">
+<!--    <ul class="left_menu">
         <li class='odd'><a href='index.php?page=products&low=0&high=5000000'>Dưới 5.000.000</a></li>
         <li class='odd'><a href='index.php?page=products&low=5000000&high=6000000'>5.000.000 ~ 6.000.000</a></li>
         <li class='odd'><a href='index.php?page=products&low=6000000&high=7000000'>6.000.000 ~ 7.000.000</a></li>
@@ -59,5 +71,25 @@
         <li class='odd'><a href='index.php?page=products&low=13000000&high=14000000'>13.000.000 ~ 14.000.000</a></li>
         <li class='odd'><a href='index.php?page=products&low=14000000&high=15000000'>14.000.000 ~ 15.000.000</a></li>
         <li class='odd'><a href='index.php?page=products&low=15000000&high=999999999'>Trên 15.000.000</a></li>
-    </ul>
+    </ul>-->
+    <div id="mainselection" style="width: 100%;margin-top: 10px">
+        <select style="width: 100%;background: #58B14C" onchange="onValueChange()" id="slLow">
+            <option value="-1">Giá thấp nhất</option>
+            <?php
+            for ($i = 0; $i < 20; $i++) {
+                echo "<option value='$i*1000000'>" . number_format($i * 1000000) . "</option>";
+            }
+            ?>
+        </select>
+    </div>
+    <div id="mainselection" style="width: 100%;margin-top: 10px">
+      <select style="width: 100%;background: #EF3B3A" onchange="onValueChange()" id="slHigh">
+          <option value="-1">Giá cao nhất</option>
+          <?php
+          for ($i = 0; $i < 20; $i++) {
+              echo "<option value='$i*1000000'>" . number_format($i * 1000000) . "</option>";
+          }
+          ?>
+      </select>
+    </div>
 </div>
