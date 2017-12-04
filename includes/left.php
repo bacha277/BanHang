@@ -1,5 +1,5 @@
     <div class="left_content">
-      <div class="title_box">Danh mục sản phẩm</div>
+      <div class="title_box" style="margin-bottom: 2px;">Danh mục sản phẩm</div>
       <ul class="left_menu">
           
           <?php
