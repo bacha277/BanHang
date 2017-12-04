@@ -24,6 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         header('location:index.php?page=del_cart');
     } else {
+        $id_san_pham = $_REQUEST['id'];
+        $sl_mua = $_REQUEST['sl_mua'];
+        $_SESSION['cart'][$id_san_pham]['sl']-=$sl_mua;
         header('location:index.php?page=login');
     } 
 }
