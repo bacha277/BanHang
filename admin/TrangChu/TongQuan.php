@@ -19,7 +19,7 @@
                     <p>Đơn hàng chưa xử lý</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-bag"></i>
+                    <a href="index.php?page=ds_dh"><i class="ion ion-bag"></i></a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                     <p>Liên hệ chưa xem</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-email"></i>
+                    <a href="index.php?page=ds_lh"><i class="ion ion-bag"></i></a>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                     <p>Tài khoản người dùng</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-person-add"></i>
+                    <a href="index.php?page=ds_tk"><i class="ion ion-bag"></i></a>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                     <p>Sản phẩm</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-monitor"></i>
+                    <a href="index.php?page=ds_sp"><i class="ion ion-bag"></i></a>
                 </div>
             </div>
         </div>
