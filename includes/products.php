@@ -14,7 +14,7 @@
         $sql = "select id_san_pham, ten_san_pham, anh_san_pham, gia, hien_thi from san_pham natural join danh_muc where hien_thi=1";
         if (isset($_REQUEST['cat_id'])) {
             $id = $_REQUEST['cat_id'];
-            $sql.=" and id_danh_muc= $id or id_danh_muc_cha=$id";
+            $sql.=" and (id_danh_muc= $id or id_danh_muc_cha=$id)";
         }
         if (isset($_REQUEST['key'])) {
             $key = $_REQUEST['key'];
