@@ -16,6 +16,10 @@
         } else {
             echo "<li><a href='index.php?page=logout' class='nav'>Đăng xuất</a></li>
                   <li class='divider'></li>";
+            if (isset($_SESSION['admin'])) {
+                echo "<li><a href='admin' class='nav'>Admin</a></li>
+                      <li class='divider'></li>";
+            }
         }
         ?>
         

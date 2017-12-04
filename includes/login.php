@@ -5,12 +5,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = str_replace("'", "", $_POST['txtUser']);
     $pass = md5($_POST['txtPass']);
 
-    $sql = "select count(*),id_tai_khoan from tai_khoan where ten_dang_nhap='$user' and mat_khau = '$pass' and quyen=1";
+    $sql = "select count(*),id_tai_khoan,quyen from tai_khoan where ten_dang_nhap='$user' and mat_khau = '$pass'";
     $rows = $db->query($sql);
     $r = $rows->fetch();
     if ($r[0] > 0) {
         //Luu session
         $_SESSION['userLoginSession'] = $r[1];
+        if ($r[2]==0||$r[2]==2) {
+            $_SESSION['admin']=1;
+        }
 
         header("location:index.php");
     } 
