@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql_2 = substr($sql_2, 0, strlen($sql_2) - 1);
         $db->exec($sql_2);
 
-        header('location:index.php?page=del_cart');
+        header('location:index.php?page=submit_cart');
     } else {
         $id_san_pham = $_REQUEST['id'];
         $sl_mua = $_REQUEST['sl_mua'];

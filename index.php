@@ -110,6 +110,9 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
             case 'register_success':
                 include 'includes/register_success.php';
                 break;
+            case 'submit_cart':
+                include 'includes/submit_cart.php';
+                break;
         }
     }
     else
